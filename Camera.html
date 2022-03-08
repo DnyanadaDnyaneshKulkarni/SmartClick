@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8">
+<title> Camera</title>
+</head>
+<body>
+<center>
+<video id="video" autoplay muted controls></video>
+</center>
+<script>
+var video=document.getElementById('video');
+var constraints={
+audio:false,
+video:true
+}
+navigator.mediaDevices.getUserMedia(constraints).then(function success(stream){
+video.srcObject=stream;
+});
+
+
+</script>
+</body>
+</html>
